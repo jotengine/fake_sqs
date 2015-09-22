@@ -9,7 +9,7 @@ module FakeSQS
       end
 
       def call(params)
-        name = params['name']
+        queue_name = params['queue']
         queue = @queues.get(queue_name)
         results = {}
         params.each do |key, value|
